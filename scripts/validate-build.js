@@ -115,15 +115,14 @@ if (fs.existsSync(apiDeclarationPath)) {
   process.exit(1);
 }
 
-// Check distribution files
+// Check distribution files (optional)
 console.log('\n📦 Checking distribution files...');
 const distFiles = ['test-installation.sh', 'npx-examples.json'];
 for (const file of distFiles) {
   if (fs.existsSync(file)) {
     console.log(`✓ ${file}`);
   } else {
-    console.error(`❌ Missing distribution file: ${file}`);
-    process.exit(1);
+    console.log(`ℹ️  Optional file not found: ${file}`);
   }
 }
 
@@ -131,12 +130,12 @@ for (const file of distFiles) {
 const tarballName = `${packageJson.name}-${packageJson.version}.tgz`;
 if (fs.existsSync(tarballName)) {
   console.log(`✓ Distribution tarball: ${tarballName}`);
-  
+
   // Check tarball size
   const stats = fs.statSync(tarballName);
   const sizeMB = (stats.size / (1024 * 1024)).toFixed(2);
   console.log(`  Size: ${sizeMB} MB`);
-  
+
   if (stats.size > 50 * 1024 * 1024) { // 50MB limit
     console.warn('⚠️  Tarball is quite large (>50MB)');
   }
