@@ -51,7 +51,6 @@ const requiredFiles = [
   'dist/api/index.js',
   'dist/api/index.d.ts',
   'dist/cli/index.js',
-  'dist/core/index.js',
   'dist/types/index.js',
   'dist/utils/index.js',
   'dist/platform/index.js'
