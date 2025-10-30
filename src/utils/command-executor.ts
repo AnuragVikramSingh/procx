@@ -121,9 +121,9 @@ export class CommandExecutor {
     const mergedOptions = { ...DEFAULT_COMMAND_OPTIONS, ...options };
     const operationId = mergedOptions.enablePerformanceMonitoring
       ? SharedPerformanceMonitoring.startOperation('command-execution', {
-        command: command.join(' '),
-        platform: this.platform,
-      })
+          command: command.join(' '),
+          platform: this.platform,
+        })
       : '';
 
     try {

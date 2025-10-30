@@ -618,13 +618,13 @@ function truncateString(str: string, maxLength: number): string {
   if (str.length <= maxLength) {
     return str;
   }
-  
+
   // For commands, try to keep the executable name and important parts
   if (str.includes('/') && str.includes(' ')) {
     const parts = str.split(' ');
     const executable = parts[0]?.split('/').pop() || parts[0] || '';
     const args = parts.slice(1).join(' ');
-    
+
     if (executable.length + 3 < maxLength) {
       const remainingSpace = maxLength - executable.length - 3; // 3 for ' …'
       if (args.length <= remainingSpace) {
@@ -634,7 +634,7 @@ function truncateString(str: string, maxLength: number): string {
       }
     }
   }
-  
+
   return str.substring(0, maxLength - 1) + '…';
 }
 

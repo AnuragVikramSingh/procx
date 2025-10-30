@@ -534,7 +534,12 @@ program
           throw new Error('Invalid port numbers in range');
         }
 
-        if (rangeStart < 1 || rangeStart > 65535 || rangeEnd < 1 || rangeEnd > 65535) {
+        if (
+          rangeStart < 1 ||
+          rangeStart > 65535 ||
+          rangeEnd < 1 ||
+          rangeEnd > 65535
+        ) {
           throw new Error('Port numbers must be between 1 and 65535');
         }
 
@@ -664,7 +669,11 @@ program
     '--interactive',
     'Show process information and ask for confirmation before killing'
   )
-  .option('--timeout <seconds>', 'Timeout in seconds before force kill', parseInt)
+  .option(
+    '--timeout <seconds>',
+    'Timeout in seconds before force kill',
+    parseInt
+  )
   .option('--dry-run', 'Show what would be killed without actually killing')
   .option('--yes', 'Skip confirmation prompts')
   .option('--json', 'Output in JSON format')
