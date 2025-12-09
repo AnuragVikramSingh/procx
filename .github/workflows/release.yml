@@ -27,27 +27,3 @@ jobs:
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    
-    - name: Create GitHub Release
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: ${{ github.ref_name }}
-        name: Release ${{ github.ref_name }}
-        body: |
-          ## Changes in this Release
-          
-          - Check the [CHANGELOG.md](CHANGELOG.md) for details
-          
-          ## Installation
-          
-          ```bash
-          npm install -g procx
-          ```
-          
-          ## Usage
-          
-          ```bash
-          procx --help
-          ```
-        draft: false
-        prerelease: false
