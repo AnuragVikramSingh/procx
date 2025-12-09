@@ -72,7 +72,8 @@ console.log('\n🧪 Testing CLI functionality...');
 try {
   // Test help command
   const helpOutput = execSync('node dist/cli/index.js --help', { encoding: 'utf8' });
-  if (helpOutput.includes('Modern cross-platform process and port management tool')) {
+  // Check for key part of description (may be wrapped in output)
+  if (helpOutput.includes('process and port management')) {
     console.log('✓ CLI help command works');
   } else {
     throw new Error('CLI help output is incorrect');

@@ -54,6 +54,7 @@ import {
 // Removed unused import: ConsoleLogging
 import { handleCliError } from '../utils/error-handler';
 // Removed unused OutputFormat import
+import packageJson from '../../package.json';
 
 const program = new Command();
 
@@ -1202,8 +1203,8 @@ program
 // Set up program metadata
 program
   .name('procx')
-  .description('Modern cross-platform process and port management tool')
-  .version('1.0.0');
+  .description(packageJson.description)
+  .version(packageJson.version);
 
 // Parse command line arguments
 if (require.main === module) {
