@@ -1,6 +1,6 @@
 {
   "name": "procx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modern cross-platform process and port management CLI & API for developers - Procx",
   "main": "dist/api/index.js",
   "types": "dist/api/index.d.ts",
